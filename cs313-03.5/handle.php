@@ -9,16 +9,20 @@
 </head>
 <body>
     <h1>CS 313 03.5 - Team Readiness Activity</h1>
-    <div class="name">
+    
+    <p class="name">
         <strong>Name:</strong> <?php echo $_POST['name']; ?>
-    </div>
-    <div class="email">
+    </p>
+    
+    <p class="email">
         <strong>Email:</strong> <?php echo '<a href="mailto:' . $_POST['email'] . '">' . $_POST['email'] . '</a>'; ?>
-    </div>
-    <div class="major">
+    </p>
+    
+    <p class="major">
         <strong>Major:</strong> <?php echo $_POST['major']; ?>
-    </div>
-    <div class="placesVisited">
+    </p>
+    
+    <p class="placesVisited">
         <strong>Places Visited:</strong> <br>
         <?php
             $placesVisited = $_POST['placesVisited'];
@@ -26,9 +30,11 @@
                 echo "$place<br>";
             }
         ?>
-    </div>
-    <div class="comments">
+    </p>
+    
+    <p class="comments">
         <strong>Comments:</strong> <?php echo $_POST['comments']; ?>
-    </div>
+    </p>
+    
 </body>
 </html>

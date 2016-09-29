@@ -1,52 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CS 313 03.5</title>
 </head>
+
 <body>
     <h1>CS 313 03.5 - Team Readiness Activity</h1>
+
     <form method="post" action="handle.php">
-            <label for="name">Name: </label>
+
+        <h2>General Info</h2>
+
+        <label for="name">Name:
             <input type="text" name="name">
-            <br>
+        </label>
+        <br>
 
-            <label for="email">Email: </label>
+        <label for="email">Email:
             <input type="text" name="email">
+        </label>
+        <br>
+
+        <h2>Major</h2>
+        <label>
+            <input type="radio" name="major" value="Computer Science"> Computer Science
+        </label>
+        <br>
+
+        <label>
+            <input type="radio" name="major" value="Web Development and Design"> Web Development and Design
+        </label>
+        <br>
+
+        <label>
+            <input type="radio" name="major" value="Computer Information Technology"> Computer Information Technology
+        </label>
+        <br>
+
+
+        <label>
+            <input type="radio" name="major" value="Computer Engineering"> Computer Engineering
+        </label>
+        <br>
+
+        <h2>Places I've Visited: </h2>
+        <br>
+        
+        <label>
+            <input type="checkbox" name="placesVisited[]" value="North America"> North America
+        </label>
+        <br>
+        
+        <label>
+            <input type="checkbox" name="placesVisited[]" value="South America"> South America
+        </label>
+        <br>
+        
+        <label>
+            <input type="checkbox" name="placesVisited[]" value="Europe"> Europe
+        </label>
+        <br>
+        
+        <label>
+            <input type="checkbox" name="placesVisited[]" value="Asia"> Asia
+        </label>
+        <br>
+        
+        <label>
+            <input type="checkbox" name="placesVisited[]" value="Australia"> Australia
+        </label>
+        <br>
+        
+        <label>
+            <input type="checkbox" name="placesVisited[]" value="Africa"> Africa
+        </label>
+        <br>
+        
+        <label>
+            <input type="checkbox" name="placesVisited[]" value="Antartica"> Antartica
+        </label>
+        <br>
+
+        <label for="comments">Comments:
             <br>
+            <textarea name="comments" cols="30" rows="10"></textarea>
+        </label>
+        <br>
 
-            <label for="major">Major</label><br>
-            <input type="radio" name="major" value="Computer Science">
-            Computer Science<br>
-            <input type="radio" name="major" value="Web Development and Design">
-            Web Development and Design<br>
-            <input type="radio" name="major" value="Computer Information Technology">
-            Computer Information Technology<br>
-            <input type="radio" name="major" value="Computer Engineering">
-            Computer Engineering<br>
-
-            <label for="placesVisited">Places I've Visited: </label><br>
-            <input type="checkbox" name="placesVisited[]" value="North America">
-            North America<br>
-            <input type="checkbox" name="placesVisited[]" value="South America">
-            South America<br>
-            <input type="checkbox" name="placesVisited[]" value="Europe">
-            Europe<br>
-            <input type="checkbox" name="placesVisited[]" value="Asia">
-            Asia<br>
-            <input type="checkbox" name="placesVisited[]" value="Australia">
-            Australia<br>
-            <input type="checkbox" name="placesVisited[]" value="Africa">
-            Africa<br>
-            <input type="checkbox" name="placesVisited[]" value="Antartica">
-            Antartica<br>
-
-            <label for="comments">Comments: </label><br>
-            <textarea name="comments" cols="30" rows="10"></textarea><br>
-
-            <input type="submit">
+        <input type="submit">
     </form>
 </body>
+
 </html>
