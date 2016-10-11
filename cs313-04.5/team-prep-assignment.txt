@@ -1,0 +1,70 @@
+#Database
+conference_notes
+
+#Tables_in_conference_notes
+conference_session
+notes
+speaker
+user
+
+#conference_session
+Field   Type    Null    Key     Default Extra
+id      int(11) NO      PRI     NULL    auto_increment
+year    int(11) NO              NULL
+month   varchar(20)     NO              NULL
+
+#speaker
+Field   Type    Null    Key     Default Extra
+id      int(11) NO      PRI     NULL    auto_increment
+name    varchar(100)    NO              NULL
+
+#notes
+Field   Type    Null    Key     Default Extra
+id      int(11) NO      PRI     NULL    auto_increment
+conference_session_id   int(11) NO      MUL     NULL
+speaker_id      int(11) NO      MUL     NULL
+user_id int(11) NO      MUL     NULL
+
+
+#user 
+Field   Type    Null    Key     Default Extra
+id      int(11) NO      PRI     NULL    auto_increment
+username        varchar(50)     NO              NULL
+password        varchar(50)     NO              NULL
+
+#Table  Create Table
+conference_session      CREATE TABLE `conference_session` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `year` int(11) NOT NULL,\n  `month` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1
+
+#Table  Create Table
+speaker CREATE TABLE `speaker` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1
+
+#Table  Create Table
+notes   CREATE TABLE `notes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `conference_session_id` int(11) NOT NULL,
+  `speaker_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_speaker` (`speaker_id`),
+  KEY `fk_conference_session` (`conference_session_id`),
+  KEY `fk_user` (`user_id`),
+  CONSTRAINT `fk_conference_session` FOREIGN KEY (`conference_session_id`) REFERENCES `conference_session` (`id`),
+  CONSTRAINT `fk_speaker` FOREIGN KEY (`speaker_id`) REFERENCES `speaker` (`id`),
+  CONSTRAINT `fk_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1
+
+#Table   Create Table
+user    CREATE TABLE `user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1
